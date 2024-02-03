@@ -1,0 +1,38 @@
+Content Fragments and Experience Fragments
+============================================
+
+1.What is the difference between Content Fragments and Experience Fragments?
+A:Content Fragments are modular and reusable content pieces that can be used across multiple channels and devices.
+Experience Fragments are collections of Content Fragments that are combined together to create a specific experience or page.
+
+
+2.What is the purpose of Content Fragments?
+A:The purpose of Content Fragments is to provide a way to create modular,reusable content that can be used across multiple channels and devices.This helps to reduce content duplication and maintenance efforts.
+
+
+3.How do you create Content Fragments in AEM?
+
+A:Content Fragments can be created in AEM by using the Content Fragment Model Editor.This editor allows you to define the structure and metadata of the Content Fragment, as well as the components that will be used to display the content.
+
+4.What is the purpose of Experience Fragments?
+A:The purpose of Experience Fragments is to provide a way to create structured content that can be combined together to create a specific experience or page.This helps to ensure consistency and maintainability of the content across multiple channels and devices.
+
+
+5.How do you create Experience Fragments in AEM?
+A:Experience Fragments can be created in AEM by using the Experience Fragment Editor. This editor allows you to combine multiple Content Fragments together,
+define the layout and design of the Experience Fragment, and add metadata and other attributes.
+
+6.Can you use Content Fragments and Experience Fragments together?
+A:Yes, Content Fragments and Experience Fragments can be used together to create rich and modular content experiences. Content Fragments can be reused across multiple Experience Fragments, and Experience Fragments can be combined together to create even more complex experiences.
+
+7.What is the difference between Content Fragment Models and Content Fragment Assets?
+A:Content Fragment Models define the structure and metadata of Content Fragments, while Content Fragment Assets are the actual content pieces that are created based on those models. Content Fragment Models can be used to create multiple Content Fragment Assets, each with their own content.
+
+8.How do you use Content Fragments and Experience Fragments in a multi-channel environment?
+A: Content Fragments and Experience Fragments are designed to be channel-agnostic, meaning they can be used across multiple channels and devices.In a multi-channel environment, Content Fragments and Experience Fragments can be reused and combined to create consistent and engaging experiences across all channels.
+
+9.How do you manage Content Fragments and Experience Fragments in AEM?
+A:Content Fragments and Experience Fragments can be managed in AEM using the Assets console.This console provides a centralized location for managing all
+content assets, including Content Fragments and Experience Fragments
+
+

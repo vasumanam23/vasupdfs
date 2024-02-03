@@ -1,0 +1,41 @@
+Sightly
+=========
+
+1.What is Sightly and how does it differ from other templating languages?
+A:Sightly is a templating language that was introduced in AEM 6.0 as a replacement for JSP. It is based on the HTML syntax and provides a simpler and more secure way of writing dynamic web pages. Unlike JSP, Sightly separates the markup from the logic, which makes it easier to maintain and debug code.
+Additionally, Sightly provides a number of features that make it easier to work with AEM-specific functionality, such as accessing content and rendering components.
+
+2.What are the advantages of using Sightly over other templating languages?
+A:Some of the advantages of using Sightly over other templating languages are:
+Separation of concerns: Sightly separates the markup from the logic, which makes it easier to maintain and debug code.
+Security: Sightly provides built-in protection against XSS(Cross-Site Scripting) attacks, which makes it a more secure option.
+Performance: Sightly is optimized for performance, and it can render pages faster than other templating languages.
+Easy integration: Sightly is designed to work with AEM, which makes it easier to integrate with other AEM-specific functionality.
+
+3.How do you include a Sightly component in an AEM page?
+A:To include a Sightly component in an AEM page, you can use the following syntax:
+kotlin
+Copy code <sly data-sly-use.<componentName>="<path/to/component>"
+/> Here, <componentName> is the name of the component that you want to include,and <path/to/component> is the path to the component in the AEM repository.
+
+4.What is the purpose of the data-sly-attribute in Sightly?
+A:The data-sly-attribute in Sightly is used to set attributes on HTML tags dynamically. It allows you to add dynamic content to the attributes of an HTML tag, such as the href or src attributes. The data-sly-attribute can also be used to conditionally set attributes based on a specific condition.For example, the following code sets the href attribute of an anchor tag dynamically:
+kotlin
+Copy code
+<a data-sly-attribute.href="${properties.link}"
+/> Here, the value of the href attribute is set to the value of the "link" property of the component.
+
+5.How do you use Sightly to iterate over a list of items?
+A:To iterate over a list of items in Sightly, you can use the data-sly-list attribute. The data-sly-list attribute allows you to iterate over a list of
+items and render them on the page. Here's an example:
+bash
+Copy code
+<ul>
+<li data-sly-list="${properties.items}">
+${item.title}
+</li>
+</ul>
+In this example, the data-sly-list attribute is used to iterate over the "items" property of the component.The ${item.title} expression is used to render the title of each item in the list.Overall, Sightly is a powerful and efficient templating language that can greatly improve the development and maintenance of AEM web pages.By understanding how to use Sightly effectively, developers can create dynamic and secure web pages that meet the needs of their users.
+
+
+

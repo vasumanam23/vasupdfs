@@ -1,0 +1,22 @@
+
+ Client Libraries in AEM
+=========================
+1.What is the difference between the Classic UI and the Touch UI for managing client libraries in AEM?
+A.The Classic UI is an older interface that was used in previous versions of AEM.It allows developers to create and manage client libraries using a graphical interface.
+The Touch UI is on the other hand, is a more modern interface that is designed to be more intuitive and user-friendly.It allows developers to create and manage client libraries using drag-and-drop functionality and provides more advanced features, such as the ability to create dependencies between client libraries.
+
+2.What is the Client Libraries API in AEM?
+A.The Client Libraries API is a programmatic way of creating and managing client libraries in AEM.It allows developers to create, update, and delete client libraries using code, rather than through a graphical interface.This can be useful for projects where client library management needs to be automated or integrated with other tools.
+
+3.How do you add a client library to a component in AEM?
+A.To add a client library to a component in AEM, you need to specify the client library in the component's cq:htmlTag property.For example, if you have a client library called myclientlib, you would add the following code to your component's cq:htmlTag property:<cq:htmlTag cq:cssClass="my-component" cq:require="myclientlib"/>.
+
+4.What is the difference between a client library category and a client library folder in AEM?
+A:A client library category is a way of grouping related client libraries together in AEM.For example, you might create a category called "UI components" and add all client libraries related to UI components to that category. A client library folder, on the other hand, is a way of organizing client libraries within a category. For example, you might create a folder called "carousel" within the "UI components" category and add all client libraries related to
+carousel components to that folder.
+
+5.How do you create a dependency between two client libraries in AEM?
+A: To create a dependency between two client libraries in AEM, you need to specify the dependent library in the client library's dependencies property.
+For example, if you have a client library called myclientlib that depends on another client library called jquery, you would add the following code to your client library's dependencies property: "jquery": true. Overall, client libraries are an essential part of developing web pages in AEM. Understanding how to create and manage them is critical for any developer working with the platform.
+
+

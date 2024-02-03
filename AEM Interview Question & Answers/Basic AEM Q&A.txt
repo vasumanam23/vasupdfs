@@ -1,0 +1,41 @@
+Basic AEM Questions.
+===================
+
+
+1.How would you configure a dispatcher in AEM, and what are the benefits of using a dispatcher?
+A:The dispatcher is a caching and load balancing tool that improves the performance of AEM.To configure a dispatcher, you need to create a dispatcher configuration file that specifies the AEM servers that the dispatcher can connect to.The dispatcher can be used to cache static content, reduce server
+load, and improve website speed.
+
+2.How would you create a custom component in AEM?
+A:To create a custom component in AEM, you need to create a new folder under the /apps directory, and then create a new .html file and a .java file to define the component's functionality.You can then use the component in AEM pages and templates.
+
+3.How would you set up a workflow in AEM, and what are the benefits of using workflows?
+A:Workflows are a series of steps that automate content creation and approval processes.To set up a workflow in AEM, you need to define the steps and rules for the workflow, and then assign the workflow to the appropriate content types.The benefits of using workflows include increased efficiency, reduced errors, and better content consistency.
+
+4.How would you create and manage users and groups in AEM?
+A:To create and manage users and groups in AEM, you need to use the User Administration console, which allows you to create and delete users and groups,
+set permissions, and manage user profiles.
+
+5.How would you integrate AEM with other systems, such as a CRM or ERP?
+A:AEM can be integrated with other systems using APIs and connectors, such as RESTful APIs and Java connectors.The integration process involves mapping data fields between the systems, and configuring authentication and authorization settings.
+
+6.How would you configure AEM for multi-lingual content management?
+A:To configure AEM for multi-lingual content management, you need to create language-specific content folders, and set up translation workflows to ensure that content is translated and published in the appropriate language.
+
+7.How would you set up and manage version control in AEM?
+A:AEM supports version control through its built-in versioning feature.To set up and manage version control, you need to enable versioning for content types, and then use the version history and comparison tools to manage and track changes.
+
+8.How would you optimize AEM for SEO, and what are some best practices for SEO in AEM?
+A:AEM can be optimized for SEO using metadata management,URL mapping, and keyword analysis.Best practices for SEO in AEM include creating descriptive and
+relevant content, using clean URLs, and optimizing images and videos.
+
+9.How would you troubleshoot common AEM issues, such as slow page load times or server errors?
+A:Common AEM issues can be troubleshooted using log files and performance monitoring tools, such as Apache JMeter or Adobe Experience Cloud. Other troubleshooting techniques include checking server settings,testing network connectivity, and reviewing code for errors.
+
+10.How would you create and manage content fragments in AEM, and how are they different from other content types?
+A:Content fragments are reusable pieces of content that can be used across different pages and channels.To create and manage content fragments in AEM, you need to define the fragment structure, add content components, and then use the fragment in pages and templates.Content fragments differ from other content types in that they are designed to be used across multiple channels and devices.
+
+11.How would you implement caching in AEM, and what are some best practices for caching?
+A:Caching can be implemented in AEM using the dispatcher and the cache-control header.Best practices for caching include caching only static content,
+setting appropriate cache times,
+

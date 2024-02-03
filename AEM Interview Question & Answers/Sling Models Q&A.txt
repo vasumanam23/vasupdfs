@@ -1,0 +1,42 @@
+Sling Model
+=============
+
+1.What are Sling Models in AEM?
+A:AEM Sling Models are a powerful way to map data from AEM Content Repository to Java objects. It helps in reducing boilerplate code and also simplifies the process of developing AEM components.
+
+2.What is the advantage of using Sling Models?
+A:The advantage of using Sling Models is that it simplifies the process of creating AEM components. It allows developers to map AEM data to Java objects with ease, making it easier to develop and maintain AEM components.
+
+3:How can we create a Sling Model in AEM?
+A:To create a Sling Model in AEM, we can create a Java class and annotate it with @Model.We can then define the properties we want to map from the AEM Content Repository to our Java object. Sample Code is in description of the video, please have a look
+
+4.What are the types of injection supported by Sling Models?
+A:Sling Models support two types of injection: constructor injection and field injection.
+
+5.What is constructor injection in Sling Models?
+A:Constructor injection is a way of injecting dependencies into the Sling Model using a constructor.This is done by annotating the constructor with @Inject.
+
+
+6.What is field injection in Sling Models?
+A:Field injection is a way of injecting dependencies into the Sling Model using fields.This is done by annotating the field with @Inject.
+
+7.How can we use Sling Models in Sightly?
+A:To use Sling Models in Sightly, we can use the data-sly-use attribute and specify the path to our Sling Model.
+
+8.What is the difference between Sling Models and WCMUsePojo?
+A:Sling Models are a newer and more powerful way of mapping data from AEM Content Repository to Java objects. They offer more flexibility and require less boilerplate code. WCMUsePojo, on the other hand, is an older way of mapping data and is being phased out.
+
+9.What is the role of the @Model annotation in Sling models?
+A:The @Model annotation is used to mark a Java class as a Sling model.This annotation has several attributes that define how the model is instantiated,
+such as the resource type, the adapter class, and the injection strategy.The @Model annotation also provides metadata about the properties and child resources of the JCR node that the model represents.
+
+10.What is the difference between @Inject and @Value annotations in Sling models?
+A:The @Inject annotation is used to inject OSGi services or other Sling models into a Sling model.This allows developers to build modular and reusable components that can be easily composed into larger AEM applications.
+The @Value annotation is used to map a property of a JCR node to a field or method of a Sling model.This allows developers to access the data stored in the JCR using a simple and intuitive syntax.
+
+11.What is the purpose of the @PostConstruct annotation in Sling models?
+A:The @PostConstruct annotation is used to mark a method that should be executed after the Sling model has been instantiated and all dependencies have been injected. This method can be used to perform initialization logic, such as setting default values or initializing data structures.The @PostConstruct method can take any number of parameters, which are injected using the @Inject or @Value annotations.
+
+12.How are Sling models used in AEM components?
+A:Sling models are often used in AEM components to map the data stored in the JCR to Java objects that can be used by the component logic.For example, a Sling model can be used to map the properties of a page node to a Java object, which can then be used by a page component to display the page content.Sling models can also be used to map child nodes of a JCR node to Java objects, which can be used to represent complex data structures, such as a navigation menu or a list of articles.
+

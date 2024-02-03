@@ -1,0 +1,81 @@
+-------------------------------------------------core javascript-------------------------------------------------------
+Introduction to javascript
+•	Introduction of client side script
+•	Introduction of javascript
+•	Cross browser issues.
+•	Declaration syntax of javascript
+•	Statements
+•	Comments
+•	Popup Boxes
+•	Alert
+•	Confirm
+•	Prompt
+•	Document.write
+•	Console.log
+•	Variables, Arrays and Operators
+•	Variables
+•	Operators
+•	Arithmetic
+•	Assignment
+•	Comparison
+•	Logical
+•	Events
+.       addEventListener
+Document object model
+•	Functions and types
+•	Conversion functions
+Conditional statements
+•	if
+•	if…else
+•	if…else if…else
+•	Switch
+Loops
+•	while
+•	do…while
+•	for
+•	for…in Statement
+•	Break
+•	Continue
+--------------------------------------------------------Advanced Javascript--------------------------------------------------------
+Window object Document object Arrays
+•	DOM 
+•	1.Window
+•	2.Navigator
+•	3.Document
+Advanced JavaScript
+•	Date object
+•	Number Object
+•	Boolean Object
+•	Math Object
+•	Array Properties and Methods
+•	This object
+•	Event object
+•	State managament
+•	Cookie
+•	Form validation
+•	Expressions
+•	Email validation
+•	Dynamic functionalities of html controls
+•	Animation
+•	Multimedia
+•	Map---googlemaps
+•	Debugging
+•	String
+•	Number
+•	Boolean
+•	RegExp
+•	Math
+•	Storeage----WebStorage,SessionStorage
+Javascript Object Oriented programming
+•	Class based oop
+•	Prototype based oop
+•	Closures
+•	Constructor function
+•	Disstructors
+•	Object litral
+•	Inheritance
+•	Polymorphis
+•	Super
+
+Introduction to Jquery  
+

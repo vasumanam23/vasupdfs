@@ -1,0 +1,843 @@
+GIT:
+----
+GIT is Distributed Version Control System Tool.
+GIT is developed by Linus Torvalds.
+
+Types of Version Control Systems.
+    1.Centralized ---->SVN,CVS,Perforce,TFS etc
+    2.Distributed ---->Git, Mecurial,Fossil
+
+Features of GIT
+================
+Why GIT is very popular????
+1.Distributed:
+   A.No single point of failure.Every developer has local repository.
+   B.Performance is more | speed is more
+   C.Without network also, developer can continue his work.
+     Workspace and remote repository need not be connected always.
+2.Staging Area:
+   In GIT Commit is 2-step process.
+   First we have to add files to the stagin area and then we have to commit from that staging area.
+   Advantage of staging area is we can cross check or double check our changes before commit.If everything is fine then we can commit.
+   12GB files we have to store in SVN.
+   GIT requires only 420MB.
+   Hashing 
+   Snapshots of our data.
+3.Branching and Merging:
+   We can create and work on multiple branches simultaneously and all these branches are isolated from each other.It enables multiple work flows.
+4.FreeWare and opensource
+5.It provides support for multiple platforms.like windows,linux,ios.
+
+GIT Architecture:
+=================
+Git has 2 types of repositories
+1.Local Repository
+2.Remote repository
+
+Usually the total project code will be available in remote repository.
+The current work of developer will be stored in local repository.
+
+New files will be created in working directory.
+Once work completed, we have to add these files to staging area.for this we have to use "git add" command
+
+git add==>Sending files from working directory to staging area.
+git commit==>Staged changes will be moved to local repository.
+git push ==>To move files from local repository to remote repository.
+git clone==>To create a new local repository from the remote repository.    cloning=>creating exactly duplicate copy.
+git pull==>To get updated files from remote repository to local repository.
+
+
+Life Cycle of File in GIT:
+==========================
+Every file in the git, is one of the following 4 stages;
+1.Untracked
+     Every new file will be created in working directory.GIT does not aware these new files.Such type of files are said to be in "untracked"state.
+     git status =>To know status of files in all areas.
+
+2.Staged
+   The files which are added to staging area are said to be in staged state.
+
+3.In Repository / Committed
+   Any file which is committed is said to be in repository state or committed state.
+   We can commit staged changes by using git commit.
+   commit message ==> Mandatary.
+   git commit -m "a new file is added"    (-m represent commit message)
+
+4.Modified
+ If the file added to staging area or committed ===> tracked by git.
+ Any file which is already tracked by git, but it is modified in working directory is said to be in modified state.
+
+
+Example To describe basic GIT Commands:
+=======================================
+1.git init
+===========
+To create/provide an empty repository to our workspace so that version control is available to our working directory.
+   git ls-files==>To list out all the files which are tracked by git.
+   ls          ==>It is the lenex command which is going to show the directiry in cwd
+
+2.git status
+============
+It shows the current status of all files in each area.
+     git status -s ==>If you want to concise output we have to use -s option.
+
+3.git add:
+==========
+To add files from working directory to staging area.
+Once we added files to staging area, then git tracks these files and ready for commit.
+Staging area-->index area or cache area
+It is logical/virtual area but not physical area.
+
+i)To add all files in cwd
+    git add .
+    git add *
+    git add -A
+
+ii)To add particular files
+    git add file1.txt file2.txt
+
+iii)We can use even regulare expression patterns also
+    git add *.java
+    git add *.txt
+    git add *.txt *.java
+
+4.git commit
+=============
+If we want to commit staged changes.
+  git commit -m "commit message"
+  git commit -a -m "modified files"
+For every commit a unique commit id will be genereated.
+This commit id also know as hash.which is hexadecimal number of 40 characters.
+commit id is unique which can be used to identify commit.
+For every commit git records
+  author name and mail id
+  timestamp
+  commit message
+
+5.Git log:
+===========
+If we want to see history of all commits in local repository with detailed log information.
+It shows history of all commmits in local repository.
+log is always talks about commits only.
+It will provide detailed log information
+Head is a reference variable which is point into another reference variable like master.
+
+*** How we can see log information of a particular file?
+A:we can see the commits related to file wise.
+
+Option-1:
+---------
+To get brief information.
+   git log 
+       detailed information
+                commit id(40characters)
+                author name and mail
+                timestamp
+                commit message
+git log --oneline
+     oneline per commit
+     commitied(7 characters)+commit message
+****This option is very helpful if we have lot of commits and to identify commit based on message.
+
+Option-2: -n option to limit the number of commits to display:
+--------------------------------------------------------------
+git log -n 3 
+git log -3 
+git log --max-count=3 
+git log -n 3 --oneline
+all these are commands same.
+
+Option-3: --grep option to search based on given pattern in the commit message.
+-------------------------------------------------------------------------------
+If the commit message is well structured commit message then we will use this command.
+git log --grep=pattern
+git log --grep="added" --oneline
+
+Option-4: Show commits more recent than a specific date or time.
+-----------------------------------------------------------------
+--since="2023-10-18"
+--after="2023-10-18"
+--after="10 days ago"
+--after="3 hours ago"
+--after="5 minuts ago"  (double quots are optional)
+
+Option-5:Show commits older than a specific time:
+---------------------------------------------------
+--until="2023-10-18"
+--before="2023-10-18"
+--before="10 days ago"
+--before="3 hours ago"
+--before="5 minuts ago"  (double quots are optional)
+
+Option-6:Show commits based on author:
+--------------------------------------
+--author=<pattern>
+git log --author=Vasu
+
+Option-7: --decorate option to display extra information
+---------------------------------------------------------
+branch name, HEAD,tags information etc
+
+6.git config:
+=============
+git config command can be used for git configurations like user name, mail id, etc.
+git config --list==>which configurations is already configur.can you please list out all configurations.
+   To list out all configuration.
+
+without global vs with global
+===============================
+For all repositories which is managed by current git ==> global
+   with global means   ==>configurations applicable for all repository.
+   without global means==>configurations applicable only for current repository.
+
+.git ==> is the hidden directory.
+ls -a==>it is going to show hidden files.
+repository is nothing but a sequence of commites.
+
+
+7.GIT Diff Command:
+====================
+Its very common requirement to find differences.
+git diff command is always going to consider write to left.
+
+***What is hash?
+A:Content will be converted into cryptograpic form The equalvant cryptograpic equalvant code.
+It is the equalvant cryptograpic code.which is more secure.
+
+case-1: To see difference in file content between working directory and staging area:
+-------------------------------------------------------------------------------------
+git diff file1.txt
+    To compare working directory and staging area.
+
+i)diff --git a/file1.txt b/file1.txt
+    a/file1.txt  --->source copy which means staging area
+    b/file1.txt  --->Destination copy which means working directory.
+
+ii)index 8445404..246caab 100644
+    8445404--->hash of source file content (staging area)
+    246caab--->hash of destination file content(working directory)
+   
+    100644--->GIT File Mode
+    First 3 digits(100)-->represents the type of file ASCII TEXT
+    Next 3 digits(644) -->represents file permissions
+                      644-->rw-r--r--
+                       4-->r
+                       2-->w
+                       1-->x
+iii)---a/file1.txt
+            Source copy missing some lines(staging area)
+iv)+++b/file1.txt
+      +++ means new lines added in destination copy(working directory)
+
+If any line prefixed with space means it is unchanged.
+If any line prefixed with + means it is added in destination copy.
+If any line prefixed with - means it is removed in destination copy.
+
+case-2:Working directory vs last commit:
+------------------------------------------
+last commit can be referenced by HEAD.
+git diff HEAD file1.txt
+     compare last commit and working directory.
+
+case-3: Staged copy vs last commit:
+--------------------------------------
+***How can we compare staged copy vs last commit?
+A:We have to use --staged option or --cached option 
+         git diff --staged HEAD file1.txt                (HEAD is optional)
+
+case-4: working commit vs specific commit:
+-------------------------------------------
+When compare with specific commit 
+   git diff ef7119f(hash code ) file1.txt
+
+case-5: Staged area vs specific commit:
+--------------------------------------
+git diff --staged ef7a19f file1.txt
+
+case-6:Between two specified commits:
+--------------------------------------
+git diff source_commit_id destination_commit_id
+
+case-7: Last commit vs Last but one commit:
+------------------------------------------
+git diff HEAD HEAD~1 file1.txt   (at the top one)
+git diff HEAD HEAD^1 file1.txt
+git diff HEAD^ file1.txt     (default first one)
+
+case-8: To compare all files:
+----------------------------
+ Don't use file name then it is going to compare all files.
+   git diff source_commit-id destination_commit_id.
+
+case-9: To see differences in content of between two branches:
+--------------------------------------------------------------
+To compare to branches
+      git diff source_branch_name destination_branch_name
+      git diff master test
+
+case-10: To see difference in local repository and remote repository:
+---------------------------------------------------------------------
+git diff localbranch_name remotebranch_name
+git diff master origin/master             (origin is the remote branch url in the master)
+
+Visual tool for checking differences:
+=====================================
+Helix Visual Merge Tool(p4merge)
+Meld
+etc
+
+p4merge==>It access Merge Tool as well as Diff tool
+
+How to configure p4merge with git:
+-----------------------------------
+p4merge 
+installed
+set path
+attached this tool with git
+
+difftool configuration:
+------------------------
+git config --global diff.tool p4merge
+gitt config --global difftool.p4merge.path "c:\program files\perforce\p4merge.exe"
+git config --global difftool.prompt false
+
+mergetool configuration:
+------------------------
+git config --global merge.tool p4merge
+gitt config --global mergetool.p4merge.path "c:\program files\perforce\p4merge.exe"
+git config --global mergetool.prompt false
+
+
+
+8.GIT rm Command:
+===================
+To remove files from different areas we can use this git rm command.
+
+Note:
+-----
+git rm   =>fatal: No pathspace was given. Which files should I remove?
+git rm . =>fatal: not removing '.'recursively without -r
+git rm -r=>It will remove all files in both staging area and working directory.
+
+case-1: To remove files from both staging area and working directory.
+---------------------------------------------------------------------
+To remove file both areas working directory and staging area.
+      git rm file1.txt==>It will remove both working directory and staging area.
+
+case-2: To remove files from only staging area but not from working directory.
+------------------------------------------------------------------------------
+If you want to remove file1.txt only from staging area   
+     git rm --cached file1.txt==>it will remove only from staging area but not from working directory.
+     
+case-3: To remove files only from working directory.
+----------------------------------------------------
+rm file1.txt==> It will remove only form working directoyr but not froom staging area.
+
+
+
+9.GIT Checkout Command:
+========================
+It is something like undo operation.
+we can use checkout command to discard unstaged changes in the tracked files of working directory.
+After checkout, working directory copy and staged copy have same content.===>git checkout --file1.txt
+only unstaged changes will be removed.
+unstaged changes  ==>The changes which are not added to staging area.
+tracked files     ==>The files which are tracked by git.
+
+git checkout             ==>It will list out all eligible files for chekcout.
+git checkout  .          ==>To discard unstaged changes in every tracked file of working directory.
+git checkout --file1.txt ==>To discard unstaged changes in file1.txt.
+
+
+
+GIT References:
+==============
+Reference is a pointers which is point into smothing else.
+Git References are pointers to commit ids.
+References are goint to simplify our commits.
+For most of the commands (like git log, git diff etc) we have to use commit ids as arguments.But remembering these commit ids is very 
+difficult.
+
+Git provides some sample names for these commit ids. We can use these names directly instead of commit ids.These are just pointers to committ ids.These sample names are nothing but references or refs.
+
+The most recent id commit id==>master or HEAD
+
+***Where the references will be stored?
+A:.git/refs directory ==>Here all references will be stored.heads,tags and remotes.
+
+***What is master?
+A:1.master is the name of the branch.
+  2.It is a reference (Pointer) to last commit id.Hence where ever last commit id required, we can use simple master.
+
+***what is the command to show information of a particular commit?
+A:git show commit id.
+  git show master     (instade of doing lengthy commit id we can use master).
+
+***Where master information is available?
+A:.git/refs/heads/master
+
+***What is HEAD?
+A:HEAD is a reference to master.
+If any reference pointing to another reference, such type of reference is called symbolic reference.HEAD is a sysmbolic reference.
+Bydefault HEAD is always pointint to the master.
+
+***Where HEAD information is available?
+A:HEAD information is available in .git directory.
+
+***How many ways to show last commit id information?
+A:There are thee ways to show last commit id information.
+   git show commit id
+   git show master 
+   git show HEAD
+
+***What is detached HEAD?
+A:Sometimes HEAD is not pointing to the branch name, such type of HEAD is called detached HEAD.
+
+
+
+10.GIT reset command:
+======================
+just like reset to default settings.
+There are two utilities of git reset command:
+
+1.To remove changes from staging area 
+2.To undo commits at repository level.
+
+utility-1. To remove changes from staging area:
+-------------------------------------------------
+whatever change added to the staging area If you dont want to commit operation then we required to use git reset command.
+It wil bring changes from staging area back to working directory.
+It is opposite to git add commad.
+
+git reset file1.txt
+
+
+git checkout vs git reset:
+---------------------------
+git checkout can be used to discard unstaged changes in workign directory.
+git reset can be used to discard staged changes from staging area.
+
+git rm --cached vs git reset:
+------------------------------
+git rm --cached file1.txt ==>It will delete the file form staging area
+git reset file1.txt       ==>The file won't be deleted from staging area, but reset to previours state (one step back).
+
+
+****Q.We modified the content of file1.txt and added to staging area.But we want to ignore those changes in both staging area and workign directory.For this requirement which commands are required to use?
+A:  git reset file1.txt
+    git checkout --file1.txt
+
+
+Utility-2: To undo commits at repository level:
+-----------------------------------------------
+We can also use reset to undo commits at repository level
+
+sytax:
+--------
+git reset <mode> <commitid>
+     moves the HEAD to the specified commit, and all remaining recentt commits will be deleted from repository.    
+     mode will decide whether these changes are going to remove from staging area or not from working directory or not.
+
+The allowed values for the mode are:
+         1.--mixed:
+         -----------
+            deleted changes from local repo and staging area.
+            It won't touch working directory.
+            possible to revert back changes.
+                 git add and git commit
+
+          2.--soft:
+         ---------
+             deleted changes only from local repository.
+             It won't touch staging area and working directory.
+             possile to revert back changes.   git commit
+
+          3.--hard:
+          --------
+             deleted changes from everywhere.
+             not possible to revert changes.
+
+
+i) --mixed reset mode:
+-----------------------
+It is the default mode.
+
+git reset --mixed commitid
+git reset  commitid           (both are same)
+
+To discard/remove commits from reposiory and from staging area also.
+It won't touch working directory.
+we can revert because changes are available in working directory.
+
+To remove last commit:
+----------------------
+git reset --mixed 0d0172a
+git reset od0172a                  (all these commands are same)
+git reset --mixed HEAD~1
+git reset HEAD~1
+
+To remove recent 2 commits:
+---------------------------
+git reset --mixed 257073d
+git reset --mixed HEAD~2
+
+***is it possible to remove reandom commits.
+A:No It is not possible to remove random commits.
+
+***is is possible ot revert the changes?
+A:yes We can revert deletion because changes are available in working directory.
+
+
+ii) --soft reset mode:
+----------------------
+Exactly same as --mixed except that it won't touch working directory and staging areas.
+  git reset --soft 257073d
+  git reset --soft HEAD~2
+
+To revert: git commit -m "file 2 and file3 added again".
+
+usecase:
+1.If some files are missing in the last commit, then add those files and commit again.
+2.If we forgot to add defect number in the commit message.
+
+iii) --hard reset mode:
+--------------------------
+It is exactly same as --mixed mode except that changes will be removed from everywhere (local repository,staging area, working directory)
+It is very dangerous command and destructive command.
+It is impossible to revert back our changes and hence while using this command we have to take abit special care.
+
+git reset --hard commitid
+
+
+If the commits are confirmed to local repository and to discard those commits we can use git reset command.
+But If the commits are confirmed to remote repository then not recommended to use reset command and we have to use revert command.
+
+
+
+
+GIT Aliasing:
+=============
+Alias ==>Nick name or other alternative name.
+   EX: git log --oneline  ==> git one
+
+Creating alias name:
+--------------------
+original command: git log --oneline
+alias:one
+By using 'git config' command we can define aliases.
+
+syntax:
+    git config --global alias.aliasName "original command without git".
+    git config --global alias.one "log --oneline".
+
+***Where these aliases will be stored????
+A: .gitconfig file
+   In user's home directory.
+
+
+How to ignore unwanted files and directories:
+----------------------------------------------
+We have to create a special file:
+    .gitignore In our working directory.
+
+***How to ignore a particular file?
+A: a.txt.
+
+***How to ignore all  .txt files?
+A:   .txt
+
+***How to ignore all hidden files?
+A:  .*
+
+*** How to ignore all files persent in logs directory?
+A:  logs/
+
+***How git treats directories:
+----------------------------------
+No special treatment for directories.
+GIT always worry about files but not directories.
+git never give any special importance for directories.
+Whenever we are adding files, then implicitly directory also will be added.
+touch dir1/{a..d}.py
+
+===========================================================================================================================================
+
+Branching:
+===========
+What is branching?
+What is the need of creating a new branch?
+Variout commands related to branching?
+Demo example
+Multiple scenarios where branching is required?
+Advantages of Branching?
+Merge operation.
+How to resolve merge conflicts?
+
+1.Important concept
+2.Mandatory concept and unavoiadable concept
+
+We created multiple files,did several commits are said to be in master branch.
+master branch is default branch/main branch in git.
+Generally main source code we will place in master branch.
+
+1.What is the need of creating a branch:
+-----------------------------------------
+master branch --->for developing web application
+child branch-1-->for Android compatibility work
+child branch-2-->for IOS compatibility work
+
+Conclusion:
+-----------
+1.Once we creates a branch, all files and commits will be inherited from parent branch to child branch.
+In child branches we can create new files and we can perform any changes in existing files and we can commit those changes based on our requirement.
+
+2.All branches are isolated to each other.The changes performed in one branch are not visible to other branches.
+
+3.Once we completed our work in child branch, we can merge that new branch with master branch or we can push that branch directly to the remote repository.
+
+
+***What is branch?
+A:branch is a simple text file. which is point into latest commit.
+
+***What is the definition of branch?
+A:An independent flow of development itself is nothing but branch.
+
+***Where branch information available?
+A: .git/refs/heads/master
+
+git branching won't required any efforts. it is very speed.
+HEAD is always pointing to current active branch.It is a text file.
+heads directory contains all branches information.
+
+
+
+Various commands related to branching:
+--------------------------------------
+1.To view available branches:
+-----------------------------
+  git branch ==>is the command to view available branches.
+
+2.To create a new branch:
+-------------------------
+   git branch branch_name
+   git branch androidbr
+
+3.How to switch from one branch to another branch:
+--------------------------------------------------
+git checkout  ==>To discard unstaged changes in working directory
+   git checkout androidbr ==>switch branch
+
+
+git branch iosbr ==>create
+git checkout iosbr==>switch
+
+shortcut way:
+-------------
+  git checkout -b iosbr==>It will create iosbr and then switch to that branch.
+
+
+SVN===>
+   branch===>We have to create a new directory
+             we have to copy all files manually
+             very difficult activity, time consuming activity
+
+***Is git crating a new directory?
+A:git won't creating a new directoyr.
+
+***Is git copy all the files from parent to child?
+A:git won't copy all the files form parent to child.
+
+It is logical duplication of files.
+
+
+Multiple use cases where branching is required????
+----------------------------------------------------
+1.We required to develop a new feature
+2.hot-fixes in production
+3.To support multiple versions of same code base
+4.To test new ideas or new technologies.
+
+Advantages of branching:
+------------------------
+1.We can enable parallel development
+2.We can work on multiple flows inisolated way
+3.We can organize source code in clean way
+4.Implementing new features will become very easy
+5.Bug fixing will become very easy
+6.Testing new ideas or new technologies will become very easy.
+
+
+Merging of a Branch:
+---------------------
+We created a branch  to implement a new feature.
+We completed implementation of that new feature.
+We have to combined those changes from child branch with parent branch.
+This combined process is nothing but merging.
+   
+
+2types of merges:
+------------------
+   1.Fast-forward merge
+   2.Three-way merge
+
+1.Fast-forward merge:
+--------------------
+2branches: parent (master) and child(feature)
+After creating child branch, if we are not doing any changes in the parent branch, git will perform Fast-forward merge
+
+In the fast-forward merge, git simply moves parent branch pointer to the last comit of child branch.
+
+If the same file modified there may be a chance of conflicts.
+In Fast_forward merge, there is no chance of merge conflicts because updadtions happend only in child branch but not in the parent branch.
+
+3-Way merge:
+-------------
+***If both parent and child branches are updated????
+A:After creating child branch if parent branch also contains some new commits.
+It may be a chance of gettiong conflicts.
+
+*After creating the branches, if updations are happened in both branches, then three-way merge will performed.
+*If the same file modified by both parent and child branches then git halts merge process and reaise conflict message.
+
+***When merge conflict is going to come?
+A: it is possible only in the 3-way merge.
+
+Git will markup both branches content in the file to resolve the conflict very easily.
+
+*We have to edit the file manually to finalize content.
+*We have to add to the staging area and then we have to perform commit.
+
+Both parent and child branches updated.git will perform 3-way merge.
+
+Fast-forward vs 3-way 
+=======================
+Fast-forward:
+-------------
+   1.After creating child only child branch is modified but parent branch is not mofified, git
+   2.it does not require any new commit.
+   3.no chance of conflicts.
+   4.it is fully handled by git
+3-way
+=====
+   1.After creating child, both parent and child branches are updated.
+   2.A new commit will be created which is also known as merge commit.
+   3.May be a chance of conflicts
+   4.If there is a confilict we have to handle manually.
+
+
+How to delete a branch:
+------------------------
+crated a branch 
+     implemented a new feature 
+                merged that branch into master branch
+
+deletion of the branch is optional.
+
+***What is the need of deletion the branch?
+A: To keep our repository clean.
+
+***How we can delete branch?
+A: git branch -d <branch_name>
+   git branch -d feature.
+
+Graph Non-linear 
+A new commit (merge commit) created.
+May be a chance of merge conflicts.
+
+*In the case of merge our graph may be linear.
+
+Rebase operation:
+-------------------
+1.Linear flow instead of non-linear flow
+2.New commits should not be created like merge commit
+3.We should not have any conflicts.
+
+Rebase is alternative to merge operation.
+Rebase==>Re+Base==>Re arrange Base.
+
+Merge is a single step process .
+
+Process of Rebasing:
+---------------------
+It is 2-step process.
+
+Step-1:We have to rebase feature branch on top of master branch.
+          git checkout feature.
+          git rebase master.
+Whatever new commits are there in the feature branch will be duplicated by git.Here everything(like commit message,timestamp,author name,mail id) is same except commit ids.
+
+The base commit of feature branch will be updated as last commit of the parent branch.
+
+Step-2:We have to merge feature branch into master branch(Fast-forward merge)
+          git checkout master.
+          git merge feature.
+
+
+Advantages of Rebase:
+======================
+1.Rebase keeps history linear.
+  Every commit has a single parent.
+2.Clean work flwo (linear) will be there.Easy to understand for the developers.
+3.Fast forward merge, no chance of conflicts.
+4.No extra commit like merge commit.
+
+Disadvantages:
+==============
+1.It rewrite history.
+  We cannot see history of commits from the feature branch
+2.We does not aware which changes are coming from feature branch 
+
+Note:Rebase is very dangerous operation and it is never recommended to use on public repositories because it rewrites history.
+
+Merge vs ReBase
+=================
+Merge:
+------
+   1.It is a single step process.
+       git checkout master. 
+       git merge feature.
+
+   2.Merge preserves history of all commits.
+   3.The commits can have more than one parent and hence hsitory is non-linear.
+   4.conflicts.
+   5.we can aware which changes are comming from feature branch.
+   6.we can use merge on public repositories.
+
+Rebase:
+-------
+   1.It is a 2-step process
+       git checkout feature
+       git rebase master.
+      
+       git checkout master 
+       git merge feature.
+   2.Rebase clears history of feature branch.
+   3.Every commit has a single parent.hence history is linear.
+   4.no chance of conflicts.
+   5.we cannot aware which changes are coming form feature branch.
+   6.public repositories.
+
+What is git stash:
+===================
+we have to save uncommitted changes from working directory and staign area to some temporary location.
+For this we have to use git stash command.
+working tree will become clean 
+Then we can do our urgent work and commit that urgent work.
+We have to bring back the saved changes and then we can continue the work.
+unstash===> git stash pop/apply.
+
+
+
+
+We have to bring stashed changes to working directory (unstash opertation):
+----------------------------------------------------------------------------
+2ways 
+1.git stash pop
+      It wil bring stashed changes from temporary location to working directory.
+      The corresponding entry will be deleted.
+2.git stash apply.
+       It wil bring stashed changes from temporary location to working directory.
+       The corresponding entry will be deleted and we can use this stash in other branches.
+
+
+

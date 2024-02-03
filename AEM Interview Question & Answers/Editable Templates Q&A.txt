@@ -1,0 +1,35 @@
+Editable Template
+==================
+
+1.what are editable templates in aem?
+A.one editable templates in a EMR templates that allow content authors to create and edit Pages without needing to know HTML or css they are created by developers and then customized by content authors to fit their specific needs.
+
+2.How are editable templates different from static templates in AEM?
+A:Static templates in AEM or pre-designed page templates that cannot be edited by content authors editable templates on the other hand allow content authors to create and edit Pages without needing to know HTML or css this gives content authors more flexibility and control over the design of their Pages question
+
+3.How are editable templates created in AEM?
+A:Three editable templates are typically created by developers using Adobe crxd too the developer creates a page template using HTML CSS and AEM components and then adds editable areas to the template where content authors can add an it content.
+
+
+4.what are the benefits of using editable templates in AEM? 
+A:The main benefit of using editable templates in AEM is that they allow non-technical users to create and edit Pages without needing to know HTML or css this saves time and resources for both developers and content authors additionally editable templates provide more flexibility and control over the design
+of pages allowing content authors to create pages that meet their specific needs.
+
+
+5.Can editable templates be customized in AEM?
+A:yes editable templates can be customized in AEM content authors can add and edit content within the editable areas of the template and developers can customize the underlying HTML CSS and components to fit specific needs.
+
+6.what is the process for creating an editable template in AEM?
+A:The process for creating an editable template in AEM typically involves the following steps a developer creates a page template using HTML CS SAS and aem components the developer adds editable areas to the template where content authors can add and edit content the developer saves the template in AEM crxd to content authors can then create and edit Pages using the editable templates.
+
+7 how are editable templates used in AEM workflows
+A: Editable templates can be used in AEM workflows to automate the process of creating and Publishing Pages content authors can create Pages using the
+editable template and then submit them for review and approver
+
+8.Can multiple editable templates be used on a single website in aem?
+A:this allows content authors to choose the template that best fits their specific needs for each page they create
+
+9.How does am ensure that content authors don't break the design of editable templates?
+A:AEM provides a set of guidelines and best practices for Content authors to follow when creating and editing Pages using editable templates additionally rem's design mode allows content authors to see a preview of how the changes will affect the page design before they save their changes.
+
+
